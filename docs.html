@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Rocket chat Documentation</title>
+<!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+<link rel="alternate" type="application/rss+xml" title="egrappler.com" href="feed/index.html">
+<link href="http://fonts.googleapis.com/css?family=Raleway:700,300" rel="stylesheet"
+        type="text/css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/prettify.css">
+</head>
+<body data-post="http://www.egrappler.com/free-product-documentation-template/">
+<nav>
+  <div class="container">
+    <h1>Doc</h1>
+    <div id="menu">
+      <ul class="toplinks">
+        <li><a href="http://www.greepit.com/Opineo/admin-form.html">Home</a></li>
+        <li><a href="http://www.egrappler.com/">About</a></li>
+        <li><a href="../doc-template/docs.html">Installation</a></li>
+        <li><a href="../doc-template-red/docs.html">FAQ</a></li>
+      </ul>
+    </div>
+    <a id="menu-toggle" href="#" class=" ">&#9776;</a> </div>
+</nav>
+<header>
+  <div class="container">
+    <h2 class="docs-header"> RocketChat Deployement Doc</h2>
+  </div>
+</header>
+<section>
+  <div class="container">
+    <ul class="docs-nav" id="menu-left">
+      <li><strong>Getting Started</strong></li>
+      <li><a href="#welcome" class=" ">Welcome</a></li>
+      <li><a href="#installation" class=" ">Installation</a></li>
+      <li><a href="#features" class=" ">Features</a></li>
+      <li><a href="#license" class=" ">License</a></li>
+      <li class="separator"></li>
+    </ul>
+    <div class="docs-content">
+      <h2> Getting Started</h2>
+      <h3 id="welcome"> Welcome</h3>
+      <p> What is Rocket Chat ?</p>
+      <p>Rocket.Chat is a Web Chat Server, developed in JavaScript, 
+        using the Meteor fullstack framework.It is a great solution for 
+        communities and companies wanting to privately host their
+        own chat service or for developers looking forward to build and evolve 
+        their own chat platforms. You can read more about  <a href="https://docs.rocket.chat/">here</a>
+        </p>
+      <h3 id="installation"> Installation</h3>
+      <p>Here are  the steps thet we  follow to install it on the server</p>
+      <ul>
+        <h3>Prerequest </h3>
+        <ul>
+          <li>Node js</li>
+          <li>Mong db</li>
+          <li>Docker</li>   
+        </ul>
+        <li>Open the terminal and  log in the server using ssh commang
+            <div class="alert alert-info">
+              <pre class="code-pre"> $ ssh << accunt name>>@server address</pre> 
+                <p>i.e ssh temp-web@144.76.153.5</p>
+            </div>
+        </li>
+        <li>
+            after you successfully log in to the server go to the 
+            Rocket chat github account page and fork  the latest Rocketchat repository to your repo.click here to 
+             <a href="https://github.com/RocketChat/Rocket.Chat">fork it </a> 
+        </li>
+        <li>clone the repository  using </li>
+        <pre class="code-pre"> $ git clone << your rocket chat  github addres   >></pre>
+        <li>Next you are going to create docker image file but you don’t need to write from the sscrach just go to the 
+          rocket chat docker hub page and copy sample docker 
+          image file and modify to custemize it. here are the link to go the <a href="https://hub.docker.com/r/rocketchat/rocket.chat/~/dockerfile/" target="_blank">rocket chat docker hub page</a> </li>
+        <li>Create docker hub account if you do not have.and try to use automated build option cause it is syncriinized with github so at any time when you made some 
+          change and update your repository you the docker hub will hook it the update and allow you to update the applicatin aby easly pull the image ,so it is better to use the automated one. </li>
+        <li>inorder to create the account first you must have docker account cause you may log  by using dockerID</li>
+        <li>Go to your account page and select the create dtop down menu.and select Automatic buil</li\>
+        <li>select oyu prefernce bitween github and bitbucket.Then select the repository to build it.</li>
+        <li>After you have set the above method now you can continue to the nexxt steps</li>
+        <li>Go to your terminal and try to crete the image file</li>
+        <li>Now pull the image file to your local server here is the commad to pull the image file.
+          <pre class="code-pre">$ docker pull << account name >>/rocket.chat</pre>
+        </li>
+        <li>after  you pull the image file and try to see the avaliable image in your local machine you have to watch it.here is the command to see avaliable image file 
+          <pre class="code-pre"> $ docker images</pre>  
+        </li>
+        <li>in oder to create the container just instantiate the image file and you do by using the <command>
+          <pre class="code-pre">$ docker run  << image name >></pre>
+        </li>
+        <li>you can edit the docker compose.yaml file in the rocketchat to your customizable option</li>
+        <li>Last but not the least so as to start the contaienr that  you created use the command 
+        <pre class="code-pre"> $ docker compose up </pre>  
+        </li>
+        <li>goto server address in the browser and see the result
+          <pre class="code-pre">144.76.153.5:3000</pre>  
+        </li>
+
+        <li>Congradulation You are deployed Rocket caht successfully !!!</li>
+      </ul>
+      <h3 id="features"> Features</h3>
+      <ul>
+        <li>Vedio COnferencing</li>
+        <li>Help desk chat</li>
+        <li>File Sharing</li>
+        <li>Vioce message</li>
+        <li>link Preview</li>
+        <li>API</li>
+        <li>Extendebility</li>
+        <li>Native Application</li>
+        <li>Mobile Application</li>
+      </ul>
+      <h3 id="license"> License</h3>
+      <h4>The MIT License (MIT)</h4>
+      <p>Copyright (c) 2015 Rocket.Chat</p>
+
+      <p> Permission is hereby granted, free of charge, to any person obtaining a copy
+          of this software and associated documentation files (the "Software"), to deal
+          in the Software without restriction, including without limitation the rights
+          to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+          copies of the Software, and to permit persons to whom the Software is
+          furnished to do so, subject to the following conditions:
+        </p>
+        <p>The above copyright notice and this permission notice shall be included in all
+            copies or substantial portions of the Software.
+        </p>
+        <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+            IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+            FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+            AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+            LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+            OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+            SOFTWARE.
+        </p>
+        
+      <hr>
+     
+     
+      
+<footer>
+  <div class="container">
+    <p> &copy; 2017 EGrappler.com </p>
+  </div>
+</footer>
+<script src="js/jquery.min.js"></script> 
+ <!-- <script src="js/bootstrap.min.js"></script> -->
+<script type="text/javascript" src="js/prettify/prettify.js"></script> 
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&skin=sunburst"></script>
+<script src="js/layout.js"></script>
+ <script src="js/jquery.localscroll-1.2.7.js" type="text/javascript"></script>
+ <script src="js/jquery.scrollTo-1.4.3.1.js" type="text/javascript"></script>
+   <script type="text/javascript" src="../../wp-content/themes/piha/js/top-bar-l1.js" ></script>
+  <script type="text/javascript" src="../../wp-content/themes/piha/js/bsa-ads-l1.js" ></script>
+  <!--Dynamically creates analytics markup-->
+  <?php include("http://www.egrappler.com/analytics.php");?>
+
+</body>
+</html>
